@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Box from '@material-ui/core/Box';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,6 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import LoadingCircle from './loadingCircle';
 import { getUsers } from '../../services/actions';
 
 const UsersTable = (props) => {
@@ -38,6 +40,16 @@ const UsersTable = (props) => {
                                 <TableCell>{ user.age }</TableCell>
                             </TableRow>
                         ))
+                    }
+                     {
+                        props.loading && <TableRow>
+                            <TableCell colSpan="2">
+                                <Box sx={{ display: 'flex', justifyContent:'center', alignItems:'center' }}>
+                                    <LoadingCircle />
+                                </Box>
+
+                            </TableCell>
+                        </TableRow>
                     }
                 </TableBody>
             </Table>

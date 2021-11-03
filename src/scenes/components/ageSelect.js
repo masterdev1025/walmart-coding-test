@@ -21,7 +21,6 @@ const AgeSelect = (props) => {
     useEffect(() => {
         props.actions.getAgeItems();
     }, [])
-    console.log(props)
     return (
         <Box sx={{ minWidth: 120, marginTop: '20px' }}>
             <Typography variant="h5" color="inherit" component="div" style={{ padding: '3px 20px' }}>
