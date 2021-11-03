@@ -29,7 +29,7 @@ const getListOfAgesOfUsersWith = (item) => {
                     ...user,
                     ageItems: db.itemsOfUserByUsername[user.username]
                 })
-            ), _user => _user.ageItems.includes(item)), 'age')), ([_name, _list]) => ({name: _name, count: _list.length}));
+            ), _user => _user.ageItems.includes(item)), 'age')), ([_age, _list]) => ({age: _age, count: _list.length}));
         }
     }
     return mockDBCall(dataAccessMethod);
