@@ -1,10 +1,13 @@
-'use strict';
-
-const serverStart = require('./server.js');
-
-const main = async () => {
-    await serverStart();
-    return;
-};
-
-main();
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './scenes/App';
+// import store from './services/store';
+// import { Provider } from 'react-redux';
+ReactDOM.render(
+  <React.StrictMode>
+    {/* <Provider store = {store}> */}
+    <App />
+    {/* </Provider> */}
+  </React.StrictMode>,
+  document.getElementById('root')
+);
